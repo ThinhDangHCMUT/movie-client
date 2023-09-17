@@ -14,8 +14,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "sass": "^1.35.1",
-    "web-vitals": "^1.0.1",
-    "postcss-safe-parser": "5.0.1" 
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,8 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:6060/api/",
-  "engines": {
-    "node": "14.17.0" 
-  }
+  "proxy": "http://localhost:6060/api/"
 }
