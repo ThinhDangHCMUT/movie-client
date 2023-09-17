@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import "./register.scss";
+import { baseUrl } from "../../const";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -22,7 +23,11 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post("auth/register", { email, username, password });
+      await axios.post(`${baseUrl}/auth/register`, {
+        email,
+        username,
+        password,
+      });
       history.push("/login");
     } catch (err) {}
   };

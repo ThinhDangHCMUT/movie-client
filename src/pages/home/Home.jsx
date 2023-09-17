@@ -4,6 +4,7 @@ import "./home.scss";
 import List from "../../components/list/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { baseUrl } from "../../const";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -13,13 +14,14 @@ const Home = ({ type }) => {
     const getRandomLists = async () => {
       try {
         const res = await axios.get(
-          `lists${type ? "?type=" + type : ""}${
+          `${baseUrl}/lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,
           {
             headers: {
               token:
-              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+                "Bearer " +
+                JSON.parse(localStorage.getItem("user")).accessToken,
             },
           }
         );
